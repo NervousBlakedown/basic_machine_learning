@@ -16,3 +16,6 @@ test_set = subset(dataset, split == FALSE)
 
 #Fitting simple linear regression to the training set
 regressor = lm(formula = Salary ~ YearsExperience, data = training_set)
+
+#Predicting the test set results
+y_pred = predict(regressor, newdata = test_set) 
