@@ -36,8 +36,8 @@ mat[mat > 50]
 #Pandas Reference.
 import pandas as pd
 pwd #Shows directory you are currently in.
-df = pd.read_csv('salaries.csv') #tab will auto-complete extension and show all file extension types.
-df['salary', 'name'] #shows column names
+df = pd.read_csv('salaries.csv') #'tab' will auto-complete extension and show all file extension types.
+df['salary', 'name'] #shows column names.
 df['salary'].max() #shows maximum value in column.
 df.describe() #shows numerical columns data within dataframe (count, mean, std, min, 25%, 50%, 75%, max).
 my_salary = df['salary'] > 60000
