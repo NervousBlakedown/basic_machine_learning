@@ -27,3 +27,10 @@ test_set = subset(dataset, split == FALSE)
 # Fitting multiple linear regression to training set.
 regressor = lm(formula = Profit ~ .,
                 data = training_set)
+
+
+# Predicting the test set results.
+y_pred = predict(regressor, newdata = test_set)
+
+
+# Building the optimal model using backward elimination.
