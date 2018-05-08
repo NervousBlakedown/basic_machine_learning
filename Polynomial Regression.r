@@ -14,3 +14,18 @@ dataset = dataset[2:3]
 # Feature Scaling.
 # training_set = scale(training_set)
 # test_set = scale(test_set)
+
+# Fit linear regression to dataset.
+lin_reg = lm(formula = Salary ~ ., data = dataset)
+
+# Fit polynomial regression to dataset.
+dataset$Level2 = dataset$Level^2
+dataset$Level3 = dataset$Level^3
+poly_reg = lm(formula = Salary ~ ., data = dataset)
+
+# Visualize linear regression results.
+install.packages('ggplot2')
+library(ggplot2)
+ggplot() + geom_point(aes(x = dataset$Level, y = dataset$Salary), colour = 'red') + geom_line(aes(x = dataset$Level, y = predict(lin_reg, newdata = )), colour = 'blue')
+
+# Visualize polynomial regression results.
