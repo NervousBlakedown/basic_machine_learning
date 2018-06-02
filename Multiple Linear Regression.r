@@ -34,3 +34,9 @@ y_pred = predict(regressor, newdata = test_set)
 
 
 # Building the optimal model using backward elimination.
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State,
+                data = dataset)
+summary(regressor)
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend, # 'State' proven statistically insignificant; removed.
+                data = dataset)
+summary(regressor)
